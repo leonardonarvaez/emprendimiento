@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Estudiantes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Formulario de Estudiantes</h2>
+
+  <div class="contenedor">
+    <div class="fila-botones">
+      <button id="btnNuevo">Nuevo</button>
+      <button id="btnGuardar" disabled>Guardar</button>
+      <button id="btnCancelar" disabled>Cancelar</button>
+      <button id="btnEliminar" disabled>Eliminar</button>
+    </div>
+
+    <label>Nombre:</label>
+    <input type="text" id="nombre" disabled>
+
+    <label>Apellido:</label>
+    <input type="text" id="apellido" disabled>
+
+    <label>Carrera:</label>
+    <select id="carrera" disabled>
+      <option value="">Seleccione</option>
+      <option>Ingeniería en Sistemas</option>
+      <option>Administración</option>
+      <option>Contabilidad</option>
+      <option>Arquitectura</option>
+    </select>
+
+    <label>Sexo:</label>
+    <div class="sexo">
+      <label><input type="radio" name="sexo" value="Masculino" disabled> Masculino</label>
+      <label><input type="radio" name="sexo" value="Femenino" disabled> Femenino</label>
+    </div>
+
+    <label><input type="checkbox" id="egresado" disabled> ¿Egresado?</label>
+
+    <div class="navegacion">
+      <button id="btnPrimero"><<</button>
+      <button id="btnAnterior"><</button>
+      <button id="btnSiguiente">></button>
+      <button id="btnUltimo">>></button>
+    </div>
+
+    <p id="contador"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
