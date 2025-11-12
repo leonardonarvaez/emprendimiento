@@ -60,7 +60,7 @@
       <div>
         <h1 class="h5 mb-0">Contacto — The Orange Corner</h1>
         <nav class="d-flex gap-2 flex-wrap mt-1">
-          <a class="btn btn-outline-warning btn-sm" href="index.html">Inicio</a>
+          <a class="btn btn-outline-warning btn-sm" href="inicio.html">Inicio</a>
           <a class="btn btn-outline-warning btn-sm" href="blog.html">Blog</a>
           <a class="btn btn-warning btn-sm" href="contacto.html">Contacto</a>
         </nav>
@@ -74,29 +74,28 @@
     <form id="formContacto">
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre completo:</label>
-        <input type="text" class="form-control" id="nombre" required disabled>
+        <input type="text" class="form-control" id="nombre" required>
       </div>
 
       <div class="mb-3">
         <label for="correo" class="form-label">Correo electrónico:</label>
-        <input type="email" class="form-control" id="correo" required disabled>
+        <input type="email" class="form-control" id="correo" required>
       </div>
 
       <div class="mb-3">
         <label for="asunto" class="form-label">Asunto:</label>
-        <input type="text" class="form-control" id="asunto" required disabled>
+        <input type="text" class="form-control" id="asunto" required>
       </div>
 
       <div class="mb-3">
         <label for="mensaje" class="form-label">Mensaje:</label>
-        <textarea class="form-control" id="mensaje" rows="4" required disabled></textarea>
+        <textarea class="form-control" id="mensaje" rows="4" required></textarea>
       </div>
 
       <!-- Botones -->
       <div class="d-flex gap-2 flex-wrap">
-        <button type="button" id="btnNuevo" class="btn btn-orange">Nuevo</button>
-        <button type="submit" id="btnEnviar" class="btn btn-success" disabled>Enviar</button>
-        <button type="button" id="btnCancelar" class="btn btn-secondary" disabled>Cancelar</button>
+        <button type="submit" id="btnEnviar" class="btn btn-orange">Enviar</button>
+        <button type="reset" class="btn btn-secondary">Cancelar</button>
       </div>
     </form>
 
@@ -110,37 +109,20 @@
   </div>
 
   <script>
-    const btnNuevo = document.getElementById("btnNuevo");
-    const btnEnviar = document.getElementById("btnEnviar");
-    const btnCancelar = document.getElementById("btnCancelar");
-    const inputs = document.querySelectorAll("#formContacto input, #formContacto textarea");
+    const form = document.getElementById("formContacto");
     const mensajeConfirmacion = document.getElementById("mensajeConfirmacion");
 
-    btnNuevo.addEventListener("click", () => {
-      inputs.forEach(i => i.disabled = false);
-      btnEnviar.disabled = false;
-      btnCancelar.disabled = false;
-      btnNuevo.disabled = true;
-      mensajeConfirmacion.style.display = "none";
-    });
-
-    btnCancelar.addEventListener("click", () => {
-      document.getElementById("formContacto").reset();
-      inputs.forEach(i => i.disabled = true);
-      btnEnviar.disabled = true;
-      btnCancelar.disabled = true;
-      btnNuevo.disabled = false;
-    });
-
-    document.getElementById("formContacto").addEventListener("submit", (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
       mensajeConfirmacion.style.display = "block";
-      document.getElementById("formContacto").reset();
-      inputs.forEach(i => i.disabled = true);
-      btnEnviar.disabled = true;
-      btnCancelar.disabled = true;
-      btnNuevo.disabled = false;
+      form.reset();
+
+      // Oculta el mensaje después de unos segundos
+      setTimeout(() => {
+        mensajeConfirmacion.style.display = "none";
+      }, 4000);
     });
   </script>
 </body>
 </html>
+
