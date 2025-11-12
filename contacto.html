@@ -17,57 +17,90 @@
       background: linear-gradient(180deg, #fbfcff 0%, #f6f7fb 100%);
       padding: 32px 16px;
     }
+
+    /* 🔸 Animación al cargar el contenedor */
     .container-main {
       max-width: 700px;
       background: white;
       border-radius: 18px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
       padding: 30px;
+      animation: fadeIn 1.2s ease-in-out;
     }
+
+    /* 🔸 Logo animado con “latido” */
     .logo {
       width: 60px; height: 60px;
       border-radius: 12px;
       display: grid; place-items: center;
       background: linear-gradient(135deg, #ff7f2a, #ffa35c);
       box-shadow: 0 6px 18px rgba(255,127,42,0.2);
+      animation: pulse 2.5s infinite ease-in-out;
     }
+
+    /* 🔸 Botón con transición */
     .btn-orange {
       background-color: #ff7f2a;
       color: white;
       border: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .btn-orange:hover {
       background-color: #e66d15;
+      transform: scale(1.05);
     }
+
     footer {
       text-align: center;
       color: #666;
       margin-top: 20px;
       font-size: 13px;
     }
+
+    /* 🔸 Animación de aparición */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🔸 Animación de “latido” para el logo */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    /* 🔸 Animación del mensaje de confirmación */
+    #mensajeConfirmacion {
+      animation: fadeInOut 4s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(10px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-10px); }
+    }
   </style>
 </head>
 
 <body>
   <div class="container container-main">
-
-
     <header class="d-flex gap-3 align-items-center mb-4">
-  <div class="logo">
-    <svg width="40" height="40" viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="30" fill="#ff7f2a" />
-    </svg>
-  </div>
-  <div>
-    <h1 class="h4 mb-0">The Orange Corner — Leonardo D. Muñoz</h1>
-    <p class="text-muted small mb-1">Página principal con enlaces a tus trabajos y presentación del emprendimiento</p>
-    <nav class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-outline-warning btn-sm" href="index.html">Inicio</a>
-      <a class="btn btn-outline-warning btn-sm" href="blog.html">Blog</a>
-      <a class="btn btn-outline-warning btn-sm" href="contacto.html">Contacto</a>
-    </nav>
-  </div>
-</header>
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="30" fill="#ff7f2a" />
+        </svg>
+      </div>
+      <div>
+        <h1 class="h4 mb-0">The Orange Corner — Leonardo D. Muñoz</h1>
+        <p class="text-muted small mb-1">Página principal con enlaces a tus trabajos y presentación del emprendimiento</p>
+        <nav class="d-flex gap-2 flex-wrap">
+          <a class="btn btn-outline-warning btn-sm" href="index.html">Inicio</a>
+          <a class="btn btn-outline-warning btn-sm" href="blog.html">Blog</a>
+          <a class="btn btn-outline-warning btn-sm" href="contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
 
     <!-- Formulario de contacto -->
     <h2 class="fw-bold mb-3">📬 Formulario de Contacto</h2>
@@ -127,4 +160,3 @@
   </script>
 </body>
 </html>
-
