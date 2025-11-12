@@ -10,14 +10,20 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(180deg, #fbfcff 0%, #f6f7fb 100%);
-      padding: 32px 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
     .container-main {
-      max-width: 700px;
+      width: 100%;
+      max-width: 600px;
       background: white;
       border-radius: 18px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      padding: 30px;
+      padding: 40px 30px;
     }
     .logo {
       width: 60px; height: 60px;
@@ -25,6 +31,7 @@
       display: grid; place-items: center;
       background: linear-gradient(135deg, #ff7f2a, #ffa35c);
       box-shadow: 0 6px 18px rgba(255,127,42,0.2);
+      margin-bottom: 10px;
     }
     .btn-orange {
       background-color: #ff7f2a;
@@ -40,29 +47,30 @@
       margin-top: 20px;
       font-size: 13px;
     }
+    nav a.active {
+      background-color: #ff7f2a !important;
+      color: white !important;
+    }
   </style>
 </head>
 <body>
-  <div class="container container-main">
-    <header class="d-flex gap-3 align-items-center mb-4">
-      <div class="logo">
-        <svg width="36" height="36" viewBox="0 0 64 64">
-          <circle cx="32" cy="32" r="30" fill="#ff7f2a" />
-        </svg>
-      </div>
-      <div>
-        <h1 class="h5 mb-0">Formulario — The Orange Corner</h1>
-        <nav class="d-flex gap-2 flex-wrap mt-1">
-          <a class="btn btn-outline-warning btn-sm" href="index.html">Inicio</a>
-          <a class="btn btn-outline-warning btn-sm" href="blog.html">Blog</a>
-          <a class="btn btn-outline-warning btn-sm" href="contacto.html">Contacto</a>
-          <a class="btn btn-warning btn-sm" href="form.html">Formulario</a>
-        </nav>
-      </div>
-    </header>
+  <div class="container-main text-center">
+    <div class="logo mx-auto mb-3">
+      <svg width="36" height="36" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="30" fill="#ff7f2a" />
+      </svg>
+    </div>
+    <h1 class="h5 mb-3">Formulario — The Orange Corner</h1>
+
+    <nav class="d-flex justify-content-center gap-2 flex-wrap mb-4">
+      <a class="btn btn-outline-warning btn-sm" href="index.html">Inicio</a>
+      <a class="btn btn-outline-warning btn-sm" href="blog.html">Blog</a>
+      <a class="btn btn-outline-warning btn-sm" href="contacto.html">Contacto</a>
+      <a class="btn btn-warning btn-sm active" href="form.html">Formulario</a>
+    </nav>
 
     <h2 class="fw-bold mb-3">📋 Registro de Estudiantes</h2>
-    <form id="formEstudiantes">
+    <form id="formEstudiantes" class="text-start">
       <div class="mb-3">
         <label class="form-label">Nombre:</label>
         <input type="text" id="nombre" class="form-control" required>
@@ -96,9 +104,9 @@
         <input type="checkbox" class="form-check-input" id="egresado">
         <label class="form-check-label" for="egresado">¿Egresado?</label>
       </div>
-      <div class="d-flex gap-2 flex-wrap">
-        <button type="submit" class="btn btn-orange">Guardar</button>
-        <button type="reset" class="btn btn-secondary">Cancelar</button>
+      <div class="d-flex justify-content-center gap-2 flex-wrap">
+        <button type="submit" class="btn btn-orange px-4">Guardar</button>
+        <button type="reset" class="btn btn-secondary px-4">Cancelar</button>
       </div>
     </form>
 
